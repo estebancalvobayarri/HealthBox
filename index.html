@@ -87,6 +87,9 @@ p { margin: 0; }
 .logo-img { display: inline-flex; flex: none; border-radius: 8px; overflow: hidden; }
 .logo-img img { height: 42px; width: auto; }
 @media (max-width: 520px) { .logo-img img { height: 36px; } }
+/* El PNG trae margen transparente alrededor: el margen negativo lo compensa */
+.logo-foot { display: inline-flex; flex: none; margin-block: -14px; margin-left: -7px; }
+.logo-foot img { height: 64px; width: auto; }
 .nav { display: flex; gap: 26px; align-items: center; font-weight: 500; font-size: 0.95rem; }
 .nav a:not(.btn) { text-decoration: none; color: var(--muted); }
 .nav a:not(.btn):hover { color: var(--fg); }
@@ -447,7 +450,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer class="dark">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="HealthBox, volver arriba"><span>Health</span><span>Box</span></a>
+    <a class="logo-foot" href="#inicio"><img src="img/Logo_letras_claras.png" width="1729" height="560" alt="HealthBox, volver arriba"></a>
     <span>Pausas activas para equipos que cuidan de su gente.</span>
   </div>
 </footer>

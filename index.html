@@ -178,30 +178,20 @@ section { padding-block: 88px; }
 .feature .ico svg { width: 22px; height: 22px; }
 .feature div:last-child { display: grid; gap: 4px; min-width: 0; }
 .feature p { color: var(--muted); }
-.phone {
-  justify-self: center; width: min(320px, 100%);
-  background: var(--navy); border-radius: 40px; padding: 12px;
-  box-shadow: 0 30px 60px rgba(14, 23, 38, .28);
+/* Montaje de pantallas reales: tres móviles en vertical en abanico y uno en horizontal delante */
+.devices { position: relative; width: min(520px, 100%); margin-inline: auto; aspect-ratio: 1 / 1.08; }
+.device {
+  position: absolute; margin: 0;
+  background: var(--navy); padding: 2.2%; border-radius: 13% / 6%;
+  box-shadow: 0 24px 50px rgba(14, 23, 38, .26);
 }
-.screen { background: var(--bg); border-radius: 30px; padding: 22px 18px 20px; display: grid; gap: 14px; }
-.screen .bar-top { display: flex; justify-content: space-between; align-items: center; }
-.screen .bar-top b { font-family: var(--display); font-size: 1.15rem; }
-.screen .chip { font-size: 0.72rem; background: var(--sun-soft); color: var(--fg); border-radius: 99px; padding: 3px 9px; font-weight: 600; }
-.screen .day { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
-.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.slot { font-family: var(--mono); font-size: 0.82rem; text-align: center; padding: 9px 0; border-radius: 10px; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
-.slot.taken { color: var(--muted); text-decoration: line-through; background: var(--surface); border-color: transparent; }
-.slot.mine { background: var(--turf); color: var(--turf-ink); border-color: var(--turf); }
-.video { background: var(--surface); border-radius: 14px; padding: 12px; display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; }
-.video .thumb { width: 52px; height: 52px; border-radius: 10px; background: var(--sun-soft); display: grid; place-items: center; color: var(--fg); }
-.video b { font-size: 0.9rem; display: block; line-height: 1.3; }
-.video span { font-size: 0.78rem; color: var(--muted); }
-.week { display: grid; gap: 6px; }
-.week .row { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
-.week .bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; align-items: end; height: 48px; }
-.week .bars i { background: var(--turf-soft); border-radius: 4px 4px 2px 2px; }
-.week .bars i.on { background: var(--turf); }
-.week .days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; font-family: var(--mono); font-size: 0.68rem; color: var(--muted); text-align: center; }
+.device img { width: 100%; height: auto; border-radius: 10% / 4.6%; background: var(--bg); }
+.device.portrait { width: 37%; }
+.device.p1 { left: 0; top: 7%; transform: rotate(-7deg); z-index: 1; }
+.device.p3 { right: 0; top: 7%; transform: rotate(7deg); z-index: 1; }
+.device.p2 { width: 41%; left: 29.5%; top: 0; z-index: 2; box-shadow: 0 30px 60px rgba(14, 23, 38, .32); }
+.device.landscape { width: 74%; left: 13%; bottom: 0; z-index: 3; padding: 1.6%; border-radius: 6% / 13%; box-shadow: 0 30px 60px rgba(14, 23, 38, .34); }
+.device.landscape img { border-radius: 4.6% / 10%; }
 .example-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 14px; }
 @media (max-width: 880px) { .app-grid { grid-template-columns: 1fr; gap: 48px; } }
 
@@ -371,27 +361,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
       <div>
-        <div class="phone" aria-label="Ejemplo de la pantalla de reserva de la app">
-          <div class="screen">
-            <div class="bar-top"><b>Reservar pausa</b><span class="chip">Box planta 1</span></div>
-            <span class="day">Martes · elige tu hueco</span>
-            <div class="slots">
-              <span class="slot taken">10:00</span><span class="slot">10:05</span><span class="slot taken">10:10</span>
-              <span class="slot">10:15</span><span class="slot mine">10:20</span><span class="slot">10:25</span>
-              <span class="slot taken">10:30</span><span class="slot">10:35</span><span class="slot">10:40</span>
-            </div>
-            <div class="video">
-              <span class="thumb"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-              <div><b>Cuello y hombros</b><span>Rutina guiada · 5 min</span></div>
-            </div>
-            <div class="week">
-              <div class="row"><span>Tus pausas esta semana</span><span>3</span></div>
-              <div class="bars"><i class="on" style="height:100%"></i><i style="height:30%"></i><i class="on" style="height:100%"></i><i class="on" style="height:100%"></i><i style="height:30%"></i></div>
-              <div class="days"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span></div>
-            </div>
-          </div>
+        <div class="devices" role="group" aria-label="Pantallas de la app HealthBox">
+          <figure class="device portrait p1"><img src="img/pantalla-1-acceso.png" width="1170" height="2532" loading="lazy" alt="Pantalla de acceso: entrar con el nombre y la contraseña de la empresa"></figure>
+          <figure class="device portrait p3"><img src="img/pantalla-3-completado.png" width="1170" height="2532" loading="lazy" alt="Vídeo «Cuello y hombros» completado y registrado"></figure>
+          <figure class="device portrait p2"><img src="img/pantalla-2-videos.png" width="1170" height="2532" loading="lazy" alt="Lista de vídeos de estiramientos filtrable por categoría"></figure>
+          <figure class="device landscape"><img src="img/pantalla-4-horizontal.png" width="2532" height="1170" loading="lazy" alt="Vídeo de estiramientos a pantalla completa con el móvil en horizontal"></figure>
         </div>
-        <p class="example-note">Pantalla de ejemplo</p>
+        <p class="example-note">Pantallas de la app</p>
       </div>
     </div>
   </section>

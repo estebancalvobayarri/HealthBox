@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>HealthBox</title>
-<meta name="description" content="HealthBox monta en tu empresa un espacio de entre 6 y 10 m² para pausas activas de 5 minutos con estiramientos guiados y una app para reservar y registrar su uso.">
+<meta name="description" content="HealthBox monta en tu empresa un espacio de entre 6 y 10 m² para pausas activas de 5 minutos con estiramientos guiados y una app en la que cada empleado entra con su usuario y registra sus pausas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
@@ -22,7 +22,7 @@
   --fg: var(--noche);
   --muted: #4f5b70;                /* Bruma oscurecida para que se lea sobre claro */
   --line: #dfe2e9;
-  --turf: var(--ambar);            /* acciones: botones, foco, hueco reservado */
+  --turf: var(--ambar);            /* acciones: botones, foco, estado activo */
   --turf-ink: var(--noche);
   --turf-soft: #fff1d6;            /* ámbar muy rebajado sobre claro */
   --sun: var(--ambar);             /* detalles: subrayados, barras */
@@ -272,7 +272,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <div class="fact"><b>6–10 m²</b><span>de espacio libre es todo lo que necesitamos</span></div>
       <div class="fact"><b>5 min</b><span>por pausa, sin salir del lugar de trabajo</span></div>
-      <div class="fact"><b>1 app</b><span>para reservar, seguir los vídeos y registrar el uso</span></div>
+      <div class="fact"><b>1 app</b><span>con tu usuario, vídeos guiados y registro de pausas</span></div>
     </div>
   </div>
 
@@ -285,7 +285,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <ol class="steps">
         <li><h3>Nos cuentas qué espacio tienes</h3><p>Una sala pequeña, un rincón del almacén o la trastienda. Con entre 6 y 10 m² es suficiente.</p></li>
         <li><h3>Montamos el box</h3><p>Nos encargamos de todo: suelo, pantalla, material de estiramientos y ambientación.</p></li>
-        <li><h3>Tu equipo lo usa</h3><p>Cada empleado reserva su hueco desde la app y hace una pausa guiada de 5 minutos.</p></li>
+        <li><h3>Tu equipo lo usa</h3><p>Cada empleado entra en la app con su usuario y hace una pausa guiada de 5 minutos, que queda registrada.</p></li>
         <li><h3>Ves cómo se usa</h3><p>La app registra el uso del box a lo largo del tiempo para que sepas cómo responde tu plantilla.</p></li>
       </ol>
     </div>
@@ -343,12 +343,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="section-head" style="margin-bottom:0">
           <p class="eyebrow">La app</p>
           <h2>Todo el box, gestionado desde el móvil</h2>
-          <p class="lead">Los empleados reservan y siguen sus pausas. La empresa ve cómo se usa el espacio.</p>
+          <p class="lead">Cada empleado entra con su usuario y registra sus pausas. La empresa ve cómo se usa el espacio.</p>
         </div>
         <div class="features">
           <div class="feature">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-            <div><h3>Reserva del espacio</h3><p>Cada persona elige su hueco de 5 minutos. Sin colas ni esperas en la puerta.</p></div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+            <div><h3>Tu usuario, tus pausas</h3><p>Cada persona entra con su propio usuario y la app registra sus pausas activas. Sin hojas de firmas ni apuntes a mano.</p></div>
           </div>
           <div class="feature">
             <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 8.5v5l4-2.5z"/><path d="M8 21h8"/></svg></span>

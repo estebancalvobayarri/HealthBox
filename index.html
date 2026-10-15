@@ -84,11 +84,11 @@ p { margin: 0; }
 }
 .logo::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ambar); margin-right: 9px; }
 .logo span { color: var(--fg); }
-.logo-img { display: inline-flex; flex: none; border-radius: 8px; overflow: hidden; }
+.logo-img { display: inline-flex; flex: none; }
 .logo-img img { height: 42px; width: auto; }
 @media (max-width: 520px) { .logo-img img { height: 36px; } }
 /* Logo con fondo blanco: se muestra como placa redondeada sobre el footer oscuro */
-.logo-foot { display: inline-flex; flex: none; border-radius: 8px; overflow: hidden; }
+.logo-foot { display: inline-flex; flex: none; }
 .logo-foot img { height: 44px; width: auto; }
 .nav { display: flex; gap: 26px; align-items: center; font-weight: 500; font-size: 0.95rem; }
 .nav a:not(.btn) { text-decoration: none; color: var(--muted); }
@@ -234,7 +234,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <header class="top">
   <div class="wrap">
-    <a class="logo-img" href="#inicio"><img src="img/Logo_letras_oscuro.png" width="577" height="187" alt="HealthBox"></a>
+    <a class="logo-img" href="#inicio"><img src="img/letra_oscura.png" width="1652" height="613" alt="HealthBox"></a>
     <nav class="nav" aria-label="Principal">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#el-box">El box</a>
@@ -426,7 +426,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer class="dark">
   <div class="wrap">
-    <a class="logo-foot" href="#inicio"><img src="img/Logo_letras_fondoBlanco.png" width="1729" height="560" alt="HealthBox, volver arriba"></a>
+    <a class="logo-foot" href="#inicio"><img src="img/letra_clara.png" width="1650" height="612" alt="HealthBox, volver arriba"></a>
     <span>Pausas activas para empresas que cuidan de su gente.</span>
   </div>
 </footer>

@@ -8,25 +8,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Paleta inspirada en Kalokai, en clave clara: dominan Claro y blanco con
-   texto Noche; Noche/Medianoche solo en momentos puntuales (.dark); Ámbar en pequeñas dosis. */
+/* Paleta «Salvia y coral»: fondo crema/blanco cálido con texto Bosque;
+   Bosque solo en momentos puntuales (.dark); Coral para acciones y Salvia para detalles. */
 :root {
-  --noche: #0E1726;
-  --medianoche: #182540;
-  --bruma: #9AA6B8;
-  --claro: #F3F4F7;
-  --ambar: #FFB224;
+  --noche: #2F4A43;            /* Bosque */
+  --medianoche: #3A5A51;       /* Bosque algo más claro para superficies oscuras */
+  --bruma: #B9CFC6;            /* Salvia aclarada para texto secundario sobre oscuro */
+  --claro: #F4EFE6;            /* Crema */
+  --ambar: #F28C6B;            /* Coral */
+  --salvia: #7FA99B;
 
-  --bg: #ffffff;
+  --bg: #FFFCF7;
   --surface: var(--claro);
   --fg: var(--noche);
-  --muted: #4f5b70;                /* Bruma oscurecida para que se lea sobre claro */
-  --line: #dfe2e9;
+  --muted: #51665F;                /* verde grisáceo legible sobre crema */
+  --line: #E7DFD2;
   --turf: var(--ambar);            /* acciones: botones, foco, estado activo */
   --turf-ink: var(--noche);
-  --turf-soft: #fff1d6;            /* ámbar muy rebajado sobre claro */
-  --sun: var(--ambar);             /* detalles: subrayados, barras */
-  --sun-soft: #fff1d6;
+  --turf-soft: #FCE4DA;            /* coral muy rebajado sobre crema */
+  --sun: var(--salvia);            /* detalles: subrayados, barras */
+  --sun-soft: #E3EDE9;
   --navy: var(--medianoche);
   --on-navy: var(--claro);
   color-scheme: light;
@@ -38,8 +39,8 @@
 }
 /* Momentos oscuros puntuales (Noche): aquí el ámbar puede ganar algo de presencia */
 .dark {
-  --bg: var(--noche); --surface: var(--medianoche); --fg: var(--claro); --muted: var(--bruma); --line: #26344f;
-  --turf-soft: #393326; --sun-soft: #393326;
+  --bg: var(--noche); --surface: var(--medianoche); --fg: var(--claro); --muted: var(--bruma); --line: #46665D;
+  --turf-soft: #5B4B42; --sun-soft: #46665D;
   color-scheme: dark; background: var(--bg); color: var(--fg);
 }
 
@@ -111,7 +112,7 @@ p { margin: 0; }
 .hero { padding-block: 56px 72px; }
 .hero .wrap { display: grid; grid-template-columns: 1.25fr 0.95fr; gap: 56px; align-items: center; }
 .hero-copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
-.hero h1 em { font-style: normal; background: linear-gradient(transparent 90%, var(--ambar) 90%, var(--ambar) 97%, transparent 97%); }
+.hero h1 em { font-style: normal; background: linear-gradient(transparent 90%, var(--salvia) 90%, var(--salvia) 97%, transparent 97%); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
 .photo { position: relative; min-width: 0; width: 100%; max-width: 440px; justify-self: center; padding-bottom: 34px; }
 .photo img { border-radius: 22px; aspect-ratio: 1 / 1; object-fit: contain; width: 100%; height: auto; }
@@ -119,7 +120,7 @@ p { margin: 0; }
   --muted: var(--bruma);
   position: absolute; right: -16px; bottom: 0;
   background: var(--navy); color: var(--on-navy); border-radius: 16px; padding: 14px 18px;
-  box-shadow: 0 14px 40px rgba(14, 23, 38, .3);
+  box-shadow: 0 14px 40px rgba(47, 74, 67, .3);
   display: grid; gap: 4px; min-width: 190px;
 }
 .timer .label { font-size: 0.8rem; color: color-mix(in srgb, var(--on-navy) 75%, transparent); font-weight: 500; }
@@ -183,14 +184,14 @@ section { padding-block: 88px; }
 .device {
   position: absolute; margin: 0;
   background: var(--navy); padding: 2.2%; border-radius: 13% / 6%;
-  box-shadow: 0 24px 50px rgba(14, 23, 38, .26);
+  box-shadow: 0 24px 50px rgba(47, 74, 67, .26);
 }
 .device img { width: 100%; height: auto; border-radius: 10% / 4.6%; background: var(--bg); }
 .device.portrait { width: 37%; }
 .device.p1 { left: 0; top: 7%; transform: rotate(-7deg); z-index: 1; }
 .device.p3 { right: 0; top: 7%; transform: rotate(7deg); z-index: 1; }
-.device.p2 { width: 41%; left: 29.5%; top: 0; z-index: 2; box-shadow: 0 30px 60px rgba(14, 23, 38, .32); }
-.device.landscape { width: 74%; left: 13%; bottom: 0; z-index: 3; padding: 1.6%; border-radius: 6% / 13%; box-shadow: 0 30px 60px rgba(14, 23, 38, .34); }
+.device.p2 { width: 41%; left: 29.5%; top: 0; z-index: 2; box-shadow: 0 30px 60px rgba(47, 74, 67, .32); }
+.device.landscape { width: 74%; left: 13%; bottom: 0; z-index: 3; padding: 1.6%; border-radius: 6% / 13%; box-shadow: 0 30px 60px rgba(47, 74, 67, .34); }
 .device.landscape img { border-radius: 4.6% / 10%; }
 .example-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 14px; }
 @media (max-width: 880px) { .app-grid { grid-template-columns: 1fr; gap: 48px; } }

@@ -8,25 +8,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Paleta inspirada en Kalokai, en clave clara: dominan Claro y blanco con
-   texto Noche; Noche/Medianoche solo en momentos puntuales (.dark); Ámbar en pequeñas dosis. */
+/* Paleta neutra con acento Menta: fondo casi blanco y gris piedra con texto
+   casi negro; negro solo en momentos puntuales (.dark); Menta para acciones y detalles. */
 :root {
-  --noche: #0E1726;
-  --medianoche: #182540;
-  --bruma: #9AA6B8;
-  --claro: #F3F4F7;
-  --ambar: #FFB224;
+  --noche: #161616;            /* casi negro */
+  --medianoche: #242422;       /* superficie sobre oscuro */
+  --bruma: #A8A8A2;            /* gris medio aclarado para leerse sobre negro */
+  --claro: #E8E8E4;            /* gris piedra */
+  --ambar: #7ED9B0;            /* Menta */
 
-  --bg: #ffffff;
+  --bg: #FAFAF8;
   --surface: var(--claro);
   --fg: var(--noche);
-  --muted: #4f5b70;                /* Bruma oscurecida para que se lea sobre claro */
-  --line: #dfe2e9;
+  --muted: #5E5E59;                /* #7A7A75 oscurecido para cumplir contraste */
+  --line: #DEDED9;
   --turf: var(--ambar);            /* acciones: botones, foco, estado activo */
   --turf-ink: var(--noche);
-  --turf-soft: #fff1d6;            /* ámbar muy rebajado sobre claro */
+  --turf-soft: #DCF4E9;            /* menta muy rebajada */
   --sun: var(--ambar);             /* detalles: subrayados, barras */
-  --sun-soft: #fff1d6;
+  --sun-soft: #DCF4E9;
   --navy: var(--medianoche);
   --on-navy: var(--claro);
   color-scheme: light;
@@ -38,8 +38,8 @@
 }
 /* Momentos oscuros puntuales (Noche): aquí el ámbar puede ganar algo de presencia */
 .dark {
-  --bg: var(--noche); --surface: var(--medianoche); --fg: var(--claro); --muted: var(--bruma); --line: #26344f;
-  --turf-soft: #393326; --sun-soft: #393326;
+  --bg: var(--noche); --surface: var(--medianoche); --fg: var(--claro); --muted: var(--bruma); --line: #33332F;
+  --turf-soft: #1F3A2E; --sun-soft: #1F3A2E;
   color-scheme: dark; background: var(--bg); color: var(--fg);
 }
 
@@ -119,7 +119,7 @@ p { margin: 0; }
   --muted: var(--bruma);
   position: absolute; right: -16px; bottom: 0;
   background: var(--navy); color: var(--on-navy); border-radius: 16px; padding: 14px 18px;
-  box-shadow: 0 14px 40px rgba(14, 23, 38, .3);
+  box-shadow: 0 14px 40px rgba(22, 22, 22, .3);
   display: grid; gap: 4px; min-width: 190px;
 }
 .timer .label { font-size: 0.8rem; color: color-mix(in srgb, var(--on-navy) 75%, transparent); font-weight: 500; }
@@ -183,14 +183,14 @@ section { padding-block: 88px; }
 .device {
   position: absolute; margin: 0;
   background: var(--navy); padding: 2.2%; border-radius: 13% / 6%;
-  box-shadow: 0 24px 50px rgba(14, 23, 38, .26);
+  box-shadow: 0 24px 50px rgba(22, 22, 22, .26);
 }
 .device img { width: 100%; height: auto; border-radius: 10% / 4.6%; background: var(--bg); }
 .device.portrait { width: 37%; }
 .device.p1 { left: 0; top: 7%; transform: rotate(-7deg); z-index: 1; }
 .device.p3 { right: 0; top: 7%; transform: rotate(7deg); z-index: 1; }
-.device.p2 { width: 41%; left: 29.5%; top: 0; z-index: 2; box-shadow: 0 30px 60px rgba(14, 23, 38, .32); }
-.device.landscape { width: 74%; left: 13%; bottom: 0; z-index: 3; padding: 1.6%; border-radius: 6% / 13%; box-shadow: 0 30px 60px rgba(14, 23, 38, .34); }
+.device.p2 { width: 41%; left: 29.5%; top: 0; z-index: 2; box-shadow: 0 30px 60px rgba(22, 22, 22, .32); }
+.device.landscape { width: 74%; left: 13%; bottom: 0; z-index: 3; padding: 1.6%; border-radius: 6% / 13%; box-shadow: 0 30px 60px rgba(22, 22, 22, .34); }
 .device.landscape img { border-radius: 4.6% / 10%; }
 .example-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 14px; }
 @media (max-width: 880px) { .app-grid { grid-template-columns: 1fr; gap: 48px; } }
